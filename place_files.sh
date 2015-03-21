@@ -1,9 +1,9 @@
 #/bin/bash
 
 while true; do
-  read -p "Do you wish to install this program?" yn
+  read -p "This is a destructive action. Cannot be reverted. Continue?" yn
   case $yn in
-    [Yy]* ) break;;
+    [Yy]* ) echo 'Placing config files ...';break;;
     * ) exit;;
   esac
 done
