@@ -1,1 +1,12 @@
-export KERN_DIR=/usr/src/kernels/3.18.9-200.fc21.x86_64
+alias cputemp='acpi -t'
+alias cd..='cd ..'
+alias apt-get='sudo apt-get'
+alias math='bc -l'
+alias diff='diff -y'
+alias hi='history'
+alias vi=vim
+alias svi='sudo vi'
+alias RM='rm -i'
+alias rm='trash'
+alias mv='mv -i'
+alias cp='cp -i'
