@@ -12,7 +12,7 @@ set showcmd
 set nocompatible              " vim, not vi
 "   set autoindent smartindent    " auto/smart indent
 "   set smarttab                  " tab and backspace are smart
-set tabstop=2                 " 6 spaces
+set tabstop=2                 " 2 spaces
 set shiftwidth=2
 set expandtab
 set scrolloff=5               " keep at least 5 lines above/below
@@ -36,6 +36,7 @@ set wildmode=longest:full
 set wildmenu                  " menu has tab completion
 let maplocalleader=','        " all my macros start with ,
 set laststatus=2
+set colorcolumn=80            " red block at 81. character 
 
 "  searching
 "  set incsearch                 " incremental search
