@@ -1,9 +1,11 @@
 syntax on
+set t_Co=256
 set background=dark
 set ruler                     " show the line number on the bar
 set more                      " use more prompt
 set autoread                  " watch for file changes
 set number                    " line numbers
+set relativenumber            " relative numbers
 set hidden
 set noautowrite               " don't automagically write on :next
 set lazyredraw                " don't redraw when don't have to
@@ -37,7 +39,8 @@ set wildmenu                  " menu has tab completion
 let maplocalleader=','        " all my macros start with ,
 set laststatus=2
 set colorcolumn=80            " red block at 81. character 
-
+set showcmd                   " shows command in status bar
+execute pathogen#infect() 
 "  searching
 "  set incsearch                 " incremental search
 "  set ignorecase                " search ignoring case
