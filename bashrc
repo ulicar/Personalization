@@ -64,3 +64,8 @@ export JAVA_HOME=/usr/lib/jvm/java-6-sun
 # Virutal Environments
 export WORKON_HOME=/home/jdomsic/virtualenvs
 source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+
+
+if [ -z $STY ]; then
+  screen -t SCREEN_SESSION_01
+fi
