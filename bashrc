@@ -67,5 +67,5 @@ source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 
 
 if [ -z $STY ]; then
-  screen -t SCREEN_SESSION_01
+  exec screen -t SCREEN_SESSION_01
 fi
