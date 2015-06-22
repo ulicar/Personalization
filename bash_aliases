@@ -17,25 +17,33 @@ alias TARGZ='tar zcvf'
 alias UNTARGZ='tar zxvf'
 
 # enable color support of ls and also add handy aliases                         
-alias ls='ls --color=auto'                                                      
-alias dir='dir --color=auto'                                                    
-alias vdir='vdir --color=auto'                                                  
+alias ls='ls -hl --color=auto'  
+alias la='ls -ahl --color=auto'
+                                                    
 alias grep='grep --color=auto'                                                  
 alias fgrep='fgrep --color=auto'                                                
-alias egrep='egrep --color=auto'                                                
-alias ll='ls -alF'                                                              
-alias la='ls -A'                                                                
-alias l='ls -CF'                                                                
-alias lah='ls -hal'
-alias cputemp='acpi -t'
-alias cd..='cd ..'
-alias apt-get='sudo apt-get'
+alias egrep='egrep --color=auto'                                                                                                              
+
+alias temp='acpi -t'
+
+alias up='cd ..'
+alias up2='cd ../..'
+
+alias install='sudo apt-get install'
+alias isntall=install
+
 alias math='bc -l'
 alias diff='diff -y'
 alias hi='history'
 alias vi=vim
 alias svi='sudo vi'
-alias RM='rm -i'
+
 alias rm='trash'
 alias mv='mv -i'
 alias cp='cp -i'
+
+alias resolution='xrandr --output LVDS1 --mode 1366x768'
+
+alias touchpad='sudo modprobe -r  psmouse && sudo modprobe psmouse proto=imps'
+
+

@@ -3,29 +3,21 @@
 # for examples
 
 # If not running interactively, don't do anything
-case $- in
-    *i*) ;;
-      *) return;;
-esac
+[ -z "$PS1" ] && return
+export TERM=xterm
 
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-HISTCONTROL=ignoreboth
+# History
+export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
+export HISTSIZE=100000                   # big big history
+export HISTFILESIZE=100000               # big big history
+shopt -s histappend                      # append to history, don't overwrite it
 
-# append to the history file, don't overwrite it
-shopt -s histappend
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=3000
-HISTFILESIZE=4000
+# Save and reload the history after each command finishes
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
-
-# If set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
-#shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -35,9 +27,10 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
+# Prompt
 function color_my_prompt {
     local __user_and_host="\[\033[01;32m\]\u@\h \[\033[1;35m\]\t"
-    local __cur_location="\[\033[01;34m\]\w"
+    local __cur_location="\[\033[01;34m\]\W"
     local __git_branch_color="\[\033[31m\]"
     local __git_branch='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`'
     local __prompt_tail="\[\033[35m\]$"
@@ -46,26 +39,22 @@ function color_my_prompt {
 }
 color_my_prompt
 
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+# Docker helper
+docker-ip() {
+  docker inspect --format '{{ .NetworkSettings.IPAddress }}' "$@"
+}
 
 # Alias definitions.
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# Set Hadoop-related environment variables
-export HADOOP_HOME=/usr/local/hadoop
-
-# Set JAVA_HOME (we will also configure JAVA_HOME directly for Hadoop later on)
-export JAVA_HOME=/usr/lib/jvm/java-6-sun
-
-# Virutal Environments
-export WORKON_HOME=/home/jdomsic/virtualenvs
-source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
-
-
+# Screen
 if [ -z $STY ]; then
-  exec screen -t SCREEN_SESSION_01
+  # (R)eatach fi(R)st available, optionaly (D)etach
+  screen -RRD
 fi
+
+
+
+
