@@ -10,11 +10,8 @@ alias NginxStop="sudo service nginx stop"
 alias RAM="sudo dmidecode --type memory"
 alias MailServerStart="sudo service postfix start"
 
-# always forget this
-alias TAR='tar cvf'
-alias UNTAR='tar xvf'
-alias TARGZ='tar zcvf'                                                             
-alias UNTARGZ='tar zxvf'
+# 
+alias ps='ps aux'
 
 # enable color support of ls and also add handy aliases                         
 alias ls='ls -hl --color=auto'  
