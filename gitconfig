@@ -1,0 +1,23 @@
+[user]
+	name = Josip Domsic
+	email = josip.domsic@gmail.com
+
+[push]
+	default = simple
+
+[alias]
+	diff = diff --color
+	d = diff --color
+  last = "!git d HEAD^..HEAD"
+
+  cm = commit
+  c  = "!git commit -am"
+  st = status
+
+  co = checkout
+  b = branch
+  cb = "!git co -b"
+
+  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  

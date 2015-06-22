@@ -12,6 +12,8 @@ alias MailServerStart="sudo service postfix start"
 
 # 
 alias ps='ps aux'
+alias now='\date "+%s"'
+alias date='date +"%d.%m.%Y %T"'
 
 # enable color support of ls and also add handy aliases                         
 alias ls='ls -hl --color=auto'  
