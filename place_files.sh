@@ -9,6 +9,9 @@ while true; do
 done
 
 
-cp vimrc ~/.vimrc
-cp bash_aliases ~/.bash_aliases
-cp bashrc ~/.bashrc
+cp vimrc          ~/.vimrc
+cp bash_aliases   ~/.bash_aliases
+cp bashrc         ~/.bashrc
+cp bash_profile   ~/.bash_profile
+cp bash_logout    ~/.bash_logout
+cp gitconfig      ~/.gitconfig
