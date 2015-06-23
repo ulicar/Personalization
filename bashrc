@@ -29,7 +29,7 @@ fi
 
 # Prompt
 function color_my_prompt {
-    local __user_and_host="\[\033[01;32m\]\u@\h \[\033[1;35m\]\t"
+    local __host="\[\033[31m\](\h)"
     local __cur_location="\[\033[01;34m\]\W"
     local __git_branch_color="\[\033[31m\]"
     local __git_branch='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`'
@@ -69,15 +69,18 @@ docker-ip() {
 
 # Alias definitions.
 if [ -f ~/.bash_aliases ]; then
-    ~/.bash_aliases
+    source ~/.bash_aliases
 fi
 
-# Screen
-if [ -z $STY ]; then
-  # (R)eatach fi(R)st available, optionaly (D)etach
-  screen -RRD
+# If ssh session don't reatach Screen.
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+  #SESSION_TYPE=remote/ssh
+  :;
+else
+  if [ -z $STY ]; then # (R)eatach fi(R)st available, optionaly (D)etach
+    screen -RRD
+  fi
 fi
-
 
 
 
