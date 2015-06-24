@@ -18,6 +18,14 @@ filetype indent on            " Enable filetype-specific indenting
 filetype plugin on            " Enable filetype-specific plugins
 set backspace=indent,eol,start
 
+" Python autocomplete
+"let g:pydiction_location = '/home/jdomsic/.vim/bundle/pydiction/complete-dict'
+"let g:pydiction_menu_height = 3
+
+" All plugins in ~/.vim/bundle
+execute pathogen#infect()
+au VimEnter *  NERDTree " autoload NerdTree
+
 " numbers
 set number                    " line numbers
 set relativenumber            " relative numbers
@@ -32,10 +40,10 @@ set shiftwidth=2              " intedation 2
 set linebreak                 " wrap long lines
 
 " Bar at the bottom
-set showcmd
-set ruler                     " show the line number on the bar
-set showmode
-set cmdheight=2               " command line two lines high
+"set showcmd
+"set ruler                     " show the line number on the bar
+"set showmode
+"set cmdheight=2               " command line two lines high
 set laststatus=2
 set complete=.,w,b,u,U,t,i,d  " do lots of scanning on tab completion
 set wildmode=longest:full

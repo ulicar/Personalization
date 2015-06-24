@@ -73,7 +73,7 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # If ssh session don't reatach Screen.
-if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+if [ $IS_LOGIN_SESSION ] || [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
   #SESSION_TYPE=remote/ssh
   :;
 else
