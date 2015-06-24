@@ -1,0 +1,10 @@
+# Vim, pathogen, bundle and plugins tutorial
+
+~/.vimrc configuration loads pathogen
+
+pathogen is in ~.vim/autoload/pathogen.vim
+
+Root dir for plugins is ~/.vim
+  autoload -> pathogen.vim
+  bundle is a collection of plugins
+  

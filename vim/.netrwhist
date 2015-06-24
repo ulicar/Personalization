@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/jdomsic/.local/share/applications'
+let g:netrw_dirhist_2='/home/jdomsic/GNS3'
+let g:netrw_dirhist_3='/home/jdomsic/Chef'
+let g:netrw_dirhist_4='/home/jdomsic/Chef/fer'
+let g:netrw_dirhist_5='/home/jdomsic/.screenlets'
+let g:netrw_dirhist_6='/home/jdomsic/.vim/autoload'
