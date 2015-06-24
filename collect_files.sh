@@ -1,11 +1,13 @@
 #/bin/bash
 
-cp ~/.bashrc        ./bashrc 
-cp ~/.bash_aliases  ./bash_aliases
-cp ~/.vimrc         ./vimrc
-cp ~/.gitconfig     ./gitconfig
-cp ~/.bash_logout   ./bash_profile
-cp ~/.bash_profile  ./bash_profile
-cp ~/.bash_logout   ./bash_logout
-cp -R ~/.vim        ./vim
+cp -v ~/.bashrc        bashrc 
+cp -v ~/.bash_aliases  bash_aliases
+cp -v ~/.vimrc         vimrc
+cp -v ~/.gitconfig     gitconfig
+cp -v ~/.bash_logout   bash_profile
+cp -v ~/.bash_profile  bash_profile
+cp -v ~/.bash_logout   bash_logout
+
+rm -rf vim
+cp -vR ~/.vim/         vim
 
