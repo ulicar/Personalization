@@ -24,7 +24,15 @@ set backspace=indent,eol,start
 
 " All plugins in ~/.vim/bundle
 execute pathogen#infect()
-au VimEnter *  NERDTree " autoload NerdTree
+
+" Execute come command on startup
+function! StartUp()
+    if 0 == argc()
+        NERDTree
+    end
+endfunction
+autocmd VimEnter * call StartUp()
+
 
 " numbers
 set number                    " line numbers
