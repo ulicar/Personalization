@@ -28,8 +28,11 @@ alias temp='acpi -t'
 alias up='cd ..'
 alias up2='cd ../..'
 
+
 alias install='sudo apt-get install'
 alias isntall=install
+alias update='sudo apt-get update'
+alias upgrade='sudo apt-get upgrade'
 
 alias math='bc -l'
 alias diff='diff -y'
