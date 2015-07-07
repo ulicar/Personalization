@@ -48,4 +48,4 @@ alias resolution='xrandr --output LVDS1 --mode 1366x768'
 
 alias touchpad='sudo modprobe -r  psmouse && sudo modprobe psmouse proto=imps'
 
-
+alias hideMyAss='sudo openvpn --config ~jdomsic/.cert/jdomsic.ovpn &'

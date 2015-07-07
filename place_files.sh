@@ -15,4 +15,5 @@ cp bashrc         ~/.bashrc
 cp bash_profile   ~/.bash_profile
 cp bash_logout    ~/.bash_logout
 cp gitconfig      ~/.gitconfig
+cp screenrc       ~/.screenrc
 cp -R vim         ~/.vim

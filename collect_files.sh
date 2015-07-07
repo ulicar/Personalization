@@ -7,6 +7,7 @@ cp -v ~/.gitconfig     gitconfig
 cp -v ~/.bash_logout   bash_profile
 cp -v ~/.bash_profile  bash_profile
 cp -v ~/.bash_logout   bash_logout
+cp -v ~/.screenrc      screenrc
 
 rm -rf vim
 cp -vR ~/.vim/         vim
